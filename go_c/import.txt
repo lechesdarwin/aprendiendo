@@ -1,0 +1,1 @@
+<meta name=go-import content=github.com/meodbo/monica git https://github.com/meodbo/monica.git> 
