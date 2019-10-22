@@ -20,6 +20,6 @@ if __name__ == '__main__':
                                         kwargs={'mensaje': 'Nuevo mensaje, desde un argumento!'})
     process.start()
 
-    process.join()
+    #process.join()
 
     logging.info('Hola, desde el proceso padre')
