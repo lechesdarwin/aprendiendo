@@ -1,6 +1,7 @@
 import time
 import logging
-import threading
+
+# import threading
 
 from concurrent.futures import ThreadPoolExecutor
 
@@ -10,10 +11,10 @@ def math_operation(number1, number2):
     time.sleep(1)
 
     result = number1 + number2
-    logging.info(f'Resultado de {number1} + {number2} = {result}')
+    print("Resultado de {} + {} = {}".format(number1 ,number2,result))
 
 if __name__ == '__main__':
-    executor = ThreadPoolExecutor(max_workers=3, thread_name_prefix='facilitos')
+    executor = ThreadPoolExecutor(max_workers=3)
 
     executor.submit(math_operation, 10, 20)
     executor.submit(math_operation, 40, 50)

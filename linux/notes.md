@@ -40,3 +40,21 @@ Systemd :
 su directorio de trabajo es /etc/systemd/
 el mas int
 system-reload para poder lograr que sistemd reconosca nuestro nueovo servicion en /etc/systemd/
+
+Las variable de entorno 
+bueno unas variables locales son MIVAR=value 
+ahora si la queremos hacer globales export MIVAR=value
+las varibles de entorno predifinidas son el
+$! muestra el PID del ultimo scrip lanzado en backgroud 
+$$muestra el ultimo prceso
+$_ muestra los ultimos argumento s utlizados en el sisema
+$? muestra el codigo de salida del  ultimo cmonandoo
+si es 0 no hay error si es 1 hay error
+
+
+apros es para buscar info de comando escencial
+whatis este nos muestra las secciones de un comando
+
+como saber info del sistema 
+uname es qel que no da indormacion del sistema el sistema operatico el kernel
+
