@@ -58,7 +58,7 @@ numero dd elimina el numero de lineas indicadas
 dw elimina los caracteeres hasta le final de la palabra actual
 # deshacer y repetir 
 u deshace el ultimo cambio realizado
-ctrl+u rehace los ultimos cambis realizados (ctrl+y)
+ctrl+R rehace los ultimos cambis realizados (ctrl+y)
 . realiza el ultimo comando realizado en vi
 :e! vuelve a los camios relizados en la ultima edicion
 # busqueda de texto
@@ -71,7 +71,7 @@ f letraword | en la linea actual busca la primera ocurrencia del letraword
 F letraword | en la linea actuall busca la primeraa ocurrencia de la letra ctual pero hacia la ixquierda
 t letra busca la letra en la linea actual a la derecha del cursor si la encentra se pocisional al un caracter anterior a la letra
 T lo mismo que t pero al aizquierda
-# remplazo por bloques
+ remplazo por bloques
 \#,#s/busca/nuevo/g | los # deben ser nuemos de un rango de lineas ese remplaza sin confirmacion
 \#,#s/busca/nuevo/c pide confirmacions
 # buffer
@@ -82,4 +82,46 @@ p recupera el conternido principal y lo pega debajo de la linea actual
 P recupera el contenido principal y lo pegan encima
 *una cosa interesante es que podemos almacenar en bufferes de la a-z como son las marcas*
 "letra yy puede trabajar de la misma manera que las anteriores solo con la diferenciade de la pecion de la letra o direcion del buffer
-               
+# mas dinamismo al copiar pegar ? SI
+podemos utilzar el poder marcas
+copiar desde una marca hastas donde este la pocision actual
+	y' marca
+cortar d'marca
+#copiar pegar desde el modo lina o :
+n,my copia desde la linea n a la m y lo pegamos desde :put esto pegara el buffer principal debajo donde se encuentre el cursor
+5,10 co 20 copia desde la linea 5 al 10 y lo pega debajo de la linea 20
+5,10 co $ los mismo que arriba solo que lo pega al final del documento
+5,10 co 0 los mismo que arriba solo que los pega al inicia del documento
+# volver en el tiempo 
+:earlier Xs|Xm|Xh -> esto nos permite volver en el tiempo segundos horas minutis
+# ir a la linea ngg vamos a la linea n
+#pegado externo acticacion y deactivacion :set paste | set nopaste
+# cargar un archivo :e filename y si queremmos abrir un ecplore :e .
+# wa guardar en todas las pestañas wa! forzar salida
+# abrir/abrir cerrar pestaña :tabe/:tabec
+#navegando en las pestañas 
+gt/gT ->siguiente/anterior ó :tabfirst/tablast
+# creando divisiones horizontal/vertical :split/:vsplit o :sp/:vsp y navegamos con ctrl+W+W o ctrl+W msa teclas direccionalesi#session(todo nuestro actual entorno de trabsjo divisiones yblalalal) 
+#guardar/cargar sesionactual :mksession nombre/source nombre ó mks/so o desde terminal vim -S nombre
+# si queremos abrir mucho archivos en forma de pestaña vi -p archivos
+pero si la cagamos y abrimos en forma de buffer vi achivos 
+:set sba lo arregla
+
+# las pestñas de vi comienzan con pocision 0 y nos movemos desde modo linea de comando con 
+:tabm posicion 
+si queremos ejecutar un comando en varias pestalñas es tabdo comando
+# el comando :make hace o llama al linter del lenguaje de programacion y nos avisa de los errores
+#gd  salta al nombre de la declaracion ya dea una funcion o varible clase osea me paro sobre digamos clase y va a buscar los mismo que donde me pare
+#/ ayuda a busca sentencias 
+#sumar/restar al numero que este abajo del cursor ctrl+a/ctrl+xfor a=42
+#grep "texto" busca la palabra en todos los fivhceros y si  le ponemos -r lo hace recursivamente
+moverse al siguiente que no sea tab o espacio INTRO y viceversa - o mas y menos 
+* busca las palabrAS que se parescan donde esta el cursor
+modo visual o sirve para jugar con las selccion
+y copia 
+c corta 
+p pega
+mayus/minus gU/gu
+**las configuraciones se encuentra en $HOME/.vimrc**
+INVESTIGAR SOBRE OMMI DE VIM 
+#para ver las lineas que aparece una palabra que esta debajo del cursor osea donde esta el cursos esa es -> modo comando ]I
