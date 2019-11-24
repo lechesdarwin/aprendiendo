@@ -1,0 +1,729 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<!-- saved from url=(0037)http://catalan.quim.ucm.es/manvi.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <title>Editor Vi: Chuletario</title>
+  
+  
+ 
+  <meta name="GENERATOR" content="hevea 1.06">
+</head>
+  <body>
+ <!--HEVEA command line is: hevea manvi --> <!--HTMLHEAD--> <!--ENDHTML--> 
+<!--PREFIX <ARG ></ARG>--> <!--CUT DEF section 1 -->   
+<h1 align="center">Editor Vi: Chuletario</h1>
+  
+<h3 align="center">Luis González MacDowell</h3>
+<!--TOC section Table of Contents-->  
+<h2>Índice</h2>
+<!--SEC END -->  
+<ul>
+  <li> <a href="http://catalan.quim.ucm.es/manvi.html#htoc1">1&nbsp;&nbsp;Movimiento del Cursor</a> </li>
+  <li><a href="http://catalan.quim.ucm.es/manvi.html#htoc2">2&nbsp;&nbsp;Insertar Texto</a> </li>
+  <li><a href="http://catalan.quim.ucm.es/manvi.html#htoc3">3&nbsp;&nbsp;Borrar Texto</a> 
+    <ul>
+      <li> <a href="http://catalan.quim.ucm.es/manvi.html#htoc4">3.1&nbsp;&nbsp;Borrar en modo Edición</a> 
+      </li>
+      <li><a href="http://catalan.quim.ucm.es/manvi.html#htoc5">3.2&nbsp;&nbsp;Borrar en modo Comando</a> </li>
+      <li><a href="http://catalan.quim.ucm.es/manvi.html#htoc6">3.3&nbsp;&nbsp;Deshacer Borrados</a> </li>
+    </ul>
+ </li>
+  <li><a href="http://catalan.quim.ucm.es/manvi.html#htoc7">4&nbsp;&nbsp;Sustituir Texto</a> </li>
+  <li><a href="http://catalan.quim.ucm.es/manvi.html#htoc8">5&nbsp;&nbsp;Localización de Cadenas</a> 
+    <ul>
+      <li> <a href="http://catalan.quim.ucm.es/manvi.html#htoc9">5.1&nbsp;&nbsp;Comandos</a> </li>
+      <li><a href="http://catalan.quim.ucm.es/manvi.html#htoc10">5.2&nbsp;&nbsp;Modificadores</a> </li>
+      <li><a href="http://catalan.quim.ucm.es/manvi.html#htoc11">5.3&nbsp;&nbsp;Búsqueda con Sustitución</a> 
+      </li>
+    </ul>
+ </li>
+  <li><a href="http://catalan.quim.ucm.es/manvi.html#htoc12">6&nbsp;&nbsp;Marcando y Copiando Texto</a> 
+    <ul>
+      <li> <a href="http://catalan.quim.ucm.es/manvi.html#htoc13">6.1&nbsp;&nbsp;Marcando en el buffer por defecto</a> 
+      </li>
+      <li><a href="http://catalan.quim.ucm.es/manvi.html#htoc14">6.2&nbsp;&nbsp;Marcando en buffers específicos</a> 
+      </li>
+      <li><a href="http://catalan.quim.ucm.es/manvi.html#htoc15">6.3&nbsp;&nbsp;Copiando la información
+de los buffers</a> </li>
+    </ul>
+ </li>
+</ul>
+  <!--TOC section Movimiento del Cursor-->  
+<h2><a name="htoc1">1</a>&nbsp;&nbsp;Movimiento del Cursor</h2>
+<!--SEC END -->  Los siguientes comandos van al lugar indicado: <br>
+ 
+<table cellspacing="2" cellpadding="0">
+ <tbody>
+    <tr>
+      <td align="left" nowrap="nowrap"><b>Espaciador</b></td>
+ <td align="left" nowrap="nowrap">Un caracter hacia adelante</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>nl</b></td>
+ <td align="left" nowrap="nowrap">n caracteres a la derecha</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>nh</b></td>
+ <td align="left" nowrap="nowrap">n caracteres a la izquierda</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>nj</b></td>
+ <td align="left" nowrap="nowrap">n líneas abajo</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>nk</b></td>
+ <td align="left" nowrap="nowrap">n lineas arriba</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>n|</b></td>
+ <td align="left" nowrap="nowrap">n lineas a la derecha, empezando desde
+el inicio de línea</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap">&nbsp;</td>
+ <td align="left" nowrap="nowrap">&nbsp;</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>nw</b></td>
+ <td align="left" nowrap="nowrap">n palabras a la dcha. (primera letra)</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>nW</b></td>
+ <td align="left" nowrap="nowrap">n palabras* a la dcha. (primera letra)</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>nb</b></td>
+ <td align="left" nowrap="nowrap">n palabras a la izda. (primera letra)</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>nB</b></td>
+ <td align="left" nowrap="nowrap">n palabras* a la izda. (primera letra)</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap">&nbsp;</td>
+ <td align="left" nowrap="nowrap">&nbsp;</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>Retorno</b></td>
+ <td align="left" nowrap="nowrap">Al principio de la siguiente línea</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>0</b></td>
+ <td align="left" nowrap="nowrap">Al principio de la línea actual</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>$</b></td>
+ <td align="left" nowrap="nowrap">Al final de la línea actual</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap">&nbsp;</td>
+ <td align="left" nowrap="nowrap">&nbsp;</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>(</b></td>
+ <td align="left" nowrap="nowrap">Al principio de la frase actual</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>)</b></td>
+ <td align="left" nowrap="nowrap">Al principio de la siguiente frase</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>{</b></td>
+ <td align="left" nowrap="nowrap">Al principio del párrafo actual</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>}</b></td>
+ <td align="left" nowrap="nowrap">Al principio del párrafo siguiente</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap">&nbsp;</td>
+ <td align="left" nowrap="nowrap">&nbsp;</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>H</b></td>
+ <td align="left" nowrap="nowrap">Al extremo izdo. de la línea superior
+de la pantalla</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>M</b></td>
+ <td align="left" nowrap="nowrap">Al extremo izdo. de la línea media
+de la pantalla</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>L</b></td>
+ <td align="left" nowrap="nowrap">Al extremo izdo de la línea inferior
+de la pantalla</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap">&nbsp;</td>
+ <td align="left" nowrap="nowrap">&nbsp;</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>nf</b><i>c</i></td>
+ <td align="left" nowrap="nowrap">Hacia adelante, hasta la <i>n</i><sup><font size="2"><i>sima</i></font></sup> aparición de <i>c</i></td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>nF</b><i>c</i></td>
+ <td align="left" nowrap="nowrap">Hacia atrás, hasta la <i>n</i><sup><font size="2"><i>sima</i></font></sup> aparición de <i>c</i></td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>nt</b><i>c</i></td>
+ <td align="left" nowrap="nowrap">Hacia adelante, hasta un caracter antes
+de la <i>n</i><sup><font size="2"><i>sima</i></font></sup>  aparición
+de <i>c</i></td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>nT</b><i>c</i></td>
+ <td align="left" nowrap="nowrap">Hacia atrás, hasta un caracter antes
+de la <i>n</i><sup><font size="2"><i>sima</i></font></sup>  aparición
+de <i>c</i></td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap">&nbsp;</td>
+ <td align="left" nowrap="nowrap">&nbsp;</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>G</b></td>
+ <td align="left" nowrap="nowrap">A la última línea del documento</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>nG</b></td>
+ <td align="left" nowrap="nowrap">A la línea n del documento</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap">&nbsp;</td>
+ <td align="left" nowrap="nowrap">&nbsp;</td>
+ </tr>
+  </tbody>
+</table>
+<br>
+ Los siguientes comandos mueven el cursor al lugar indicado: <br>
+ <br>
+ 
+<table cellspacing="2" cellpadding="0">
+ <tbody>
+    <tr>
+      <td align="left" nowrap="nowrap"><b>Ctrl-U </b></td>
+ <td align="left" nowrap="nowrap">Media pantalla hacia arriba</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>Ctrl-D</b></td>
+ <td align="left" nowrap="nowrap">Media pantalla hacia abajo</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>Ctrl-F</b></td>
+ <td align="left" nowrap="nowrap">Una pantalla completa hacia adelante</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>Ctrl-B</b></td>
+ <td align="left" nowrap="nowrap">Una pantalla hacia detrás</td>
+ </tr>
+  </tbody>
+</table>
+<br>
+ <!--TOC section Insertar Texto-->  
+<h2><a name="htoc2">2</a>&nbsp;&nbsp;Insertar Texto</h2>
+<!--SEC END -->  Los siguientes comandos permiten insertar texto en el lugar
+indicado: <br>
+ <br>
+ 
+<table cellspacing="2" cellpadding="0">
+ <tbody>
+    <tr>
+      <td align="left" nowrap="nowrap"><b>i</b></td>
+ <td align="left" nowrap="nowrap">Delante del cursor</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>I</b></td>
+ <td align="left" nowrap="nowrap">Delante del primer carácter de la
+línea</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>a</b></td>
+ <td align="left" nowrap="nowrap">Tras el cursor</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>A</b></td>
+ <td align="left" nowrap="nowrap">Al final de la línea</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>o</b></td>
+ <td align="left" nowrap="nowrap">En la línea inferior, tras abrirla</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>O</b></td>
+ <td align="left" nowrap="nowrap">En la línea superior, tras abrirla</td>
+ </tr>
+  </tbody>
+</table>
+<br>
+ <!--TOC section Borrar Texto-->  
+<h2><a name="htoc3">3</a>&nbsp;&nbsp;Borrar Texto</h2>
+<!--SEC END -->  <!--TOC subsection Borrar en modo Edición-->  
+<h3><a name="htoc4">3.1</a>&nbsp;&nbsp;Borrar en modo Edición</h3>
+<!--SEC END -->  <b>Ctrl-H</b> o <b>Retroceso</b> permiten retroceder para
+sobre-escribir.<br>
+ <br>
+ <!--TOC subsection Borrar en modo Comando-->  
+<h3><a name="htoc5">3.2</a>&nbsp;&nbsp;Borrar en modo Comando</h3>
+<!--SEC END -->  Los siguientes comandos borran el texto indicado: <br>
+ <br>
+ 
+<table cellspacing="2" cellpadding="0">
+ <tbody>
+    <tr>
+      <td align="left" nowrap="nowrap"><b>nx</b></td>
+ <td align="left" nowrap="nowrap">n caracteres a la dcha.</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>nX</b></td>
+ <td align="left" nowrap="nowrap">n caracteres a la izda.</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap">&nbsp;</td>
+ <td align="left" nowrap="nowrap">&nbsp;</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>ndw</b></td>
+ <td align="left" nowrap="nowrap">n palabras a la dcha del cursor)</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>ndW</b></td>
+ <td align="left" nowrap="nowrap">n palabras* a la derecha del cursor)</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>ndb</b></td>
+ <td align="left" nowrap="nowrap">n palabras a la izda. del cursor</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>ndB</b></td>
+ <td align="left" nowrap="nowrap">n palabras* a la izda. del cursor</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap">&nbsp;</td>
+ <td align="left" nowrap="nowrap">&nbsp;</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>d-Retorno</b></td>
+ <td align="left" nowrap="nowrap">La línea actual y la siguiente</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>ndd</b></td>
+ <td align="left" nowrap="nowrap">n líneas empezando desde la actual</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>d0</b></td>
+ <td align="left" nowrap="nowrap">Hasta el principio de la línea</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>d$</b></td>
+ <td align="left" nowrap="nowrap">Hasta el final de la línea</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap">&nbsp;</td>
+ <td align="left" nowrap="nowrap">&nbsp;</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>ndf</b><i>c</i></td>
+ <td align="left" nowrap="nowrap">Hacia adelante, hasta la <i>n</i><sup><font size="2"><i>sima</i></font></sup> aparicion del caracter  <i>c</i></td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>ndF</b><i>c</i></td>
+ <td align="left" nowrap="nowrap">Hacia atrás, hasta la <i>n</i><sup><font size="2"><i>sima</i></font></sup> aparicion del caracter   <i>c</i></td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>ndt</b><i>c</i></td>
+ <td align="left" nowrap="nowrap">Hacia adelante, hasta el caracter anterior
+a la <i>n</i><sup><font size="2"><i>sima</i></font></sup>   aparicion del
+caracter <i>c</i></td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>ndT</b><i>c</i></td>
+ <td align="left" nowrap="nowrap">Hacia atrás, hasta el caracter anterior
+a la <i>n</i><sup><font size="2"><i>sima</i></font></sup>   aparicion del
+caracter <i>c</i></td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap">&nbsp;</td>
+ <td align="left" nowrap="nowrap">&nbsp;</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>d)</b></td>
+ <td align="left" nowrap="nowrap">Hasta el final de la frase</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>d(</b></td>
+ <td align="left" nowrap="nowrap">Hasta el principio de la frase</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>d}</b></td>
+ <td align="left" nowrap="nowrap">Hasta el final del párrafo</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>d}</b></td>
+ <td align="left" nowrap="nowrap">Hasta el principio del párrafo</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap">&nbsp;</td>
+ <td align="left" nowrap="nowrap">&nbsp;</td>
+ </tr>
+  </tbody>
+</table>
+<br>
+ Expresión general: <b>d/RE</b>+Return: Borra hacia adelante, hasta
+la 				 'Regular expresion' RE. <br>
+ <br>
+ Expersión general: <b>d?RE</b>+Return: Borra hacia atrás,
+hasta la  				 'Regular expression' RE. <br>
+ <br>
+ <br>
+ <!--TOC subsection Deshacer Borrados-->  
+<h3><a name="htoc6">3.3</a>&nbsp;&nbsp;Deshacer Borrados</h3>
+<!--SEC END -->  <b>u</b> deshace última correción en la líinea<br>
+ <br>
+ <b>U</b> deshace todas las correciones de la última líinea
+modificada<br>
+ <br>
+ <!--TOC section Sustituir Texto-->  
+<h2><a name="htoc7">4</a>&nbsp;&nbsp;Sustituir Texto</h2>
+<!--SEC END -->  Los siguientes comandos susituyen el texto indicado por
+el escrito después de ejecutar dicho comando. <br>
+ 
+<table cellspacing="2" cellpadding="0">
+ <tbody>
+    <tr>
+      <td align="left" nowrap="nowrap"><b>nr</b></td>
+ <td align="left" nowrap="nowrap">Sobre el cursor, n veces un carácter</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>R</b></td>
+ <td align="left" nowrap="nowrap">Desde el cursor hasta pulsar <b>esc</b></td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap">&nbsp;</td>
+ <td align="left" nowrap="nowrap">&nbsp;</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>cw</b></td>
+ <td align="left" nowrap="nowrap">Desde el cursor hasta el final de la palabra</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>cW</b></td>
+ <td align="left" nowrap="nowrap">Desde el cursor hasta el final de la palabra*</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>cb</b></td>
+ <td align="left" nowrap="nowrap">Desde el comienzo de la palabra hasta el
+cursor</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>cB</b></td>
+ <td align="left" nowrap="nowrap">Desde el comienzo de la palabra* hasta
+el cursor</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap">&nbsp;</td>
+ <td align="left" nowrap="nowrap">&nbsp;</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>ncc</b></td>
+ <td align="left" nowrap="nowrap">n líneas desde la actual</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>c0</b></td>
+ <td align="left" nowrap="nowrap">desde el principio de la línea hasta
+el cursor</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>c$</b></td>
+ <td align="left" nowrap="nowrap">desde el cursor al final de la línea</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap">&nbsp;</td>
+ <td align="left" nowrap="nowrap">&nbsp;</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>c) </b></td>
+ <td align="left" nowrap="nowrap">Desde el cursor hasta el final de la frase</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>c(</b></td>
+ <td align="left" nowrap="nowrap">Desde el principio de la frase hasta el
+cursor</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>c}</b></td>
+ <td align="left" nowrap="nowrap">Desde el cursor hasta el final del párrafo</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>c{</b></td>
+ <td align="left" nowrap="nowrap">Desde el principio del párrafo hasta
+el cursor</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap">&nbsp;</td>
+ <td align="left" nowrap="nowrap">&nbsp;</td>
+ </tr>
+  </tbody>
+</table>
+<br>
+ <!--TOC section Localización de Cadenas-->  
+<h2><a name="htoc8">5</a>&nbsp;&nbsp;Localización de Cadenas</h2>
+<!--SEC END -->  <!--TOC subsection Comandos-->  
+<h3><a name="htoc9">5.1</a>&nbsp;&nbsp;Comandos</h3>
+<!--SEC END -->  <br>
+ 
+<table cellspacing="2" cellpadding="0">
+ <tbody>
+    <tr>
+      <td align="left" nowrap="nowrap"><b>/</b><i>cadena</i><b>-Retorno</b></td>
+ <td align="left" nowrap="nowrap">Busca hacia abajo la cadena indicada</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>?/</b><i>cadena</i><b>-Retorno</b></td>
+ <td align="left" nowrap="nowrap">Busca hacia arriba la cadena indicada</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>n</b></td>
+ <td align="left" nowrap="nowrap">Repite la búsqueda en la misma dirección</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>N</b></td>
+ <td align="left" nowrap="nowrap">Repite la búsqueda en la dirección
+contraria</td>
+ </tr>
+  </tbody>
+</table>
+<br>
+ 
+<ul>
+  <li> Las cadenas especificadas no pueden tener caracteres especiales  como
+*,?,$,etc., a no ser que esté activada la opción set nomagic. 
+  </li>
+  <li>La busqueda es 'case-sensitive' a no ser que esté activada la
+opción set ignorecase </li>
+</ul>
+<br>
+ <!--TOC subsection Modificadores-->  
+<h3><a name="htoc10">5.2</a>&nbsp;&nbsp;Modificadores</h3>
+<!--SEC END -->  La cadena admite modificadores a efectos de especificar
+o generalizar la búsqueda. Los modificadores que se indican tienen
+el significado siguiente: <br>
+ <br>
+ 
+<table cellspacing="2" cellpadding="0">
+ <tbody>
+    <tr>
+      <td align="left" nowrap="nowrap"><i>gorro</i></td>
+ <td align="left" nowrap="nowrap">Principio de línea (escrito antes
+de la cadena)</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>$</b></td>
+ <td align="left" nowrap="nowrap">Final de línea (escrito después
+de la cadena)</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>.</b></td>
+ <td align="left" nowrap="nowrap">Un carácter cualquiera (escrito
+en cualquier parte de la cadena)</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>[,,,]</b></td>
+ <td align="left" nowrap="nowrap">Cualquiera de los caracteres que se  escriban
+en la lista entre corchetes</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap">&nbsp;</td>
+ <td align="left" nowrap="nowrap">(escrito en cualquier parte de la cadena)</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap">&nbsp;</td>
+ <td align="left" nowrap="nowrap">&nbsp;</td>
+ </tr>
+  </tbody>
+</table>
+<br>
+ <!--TOC subsection Búsqueda con Sustitución-->  
+<h3><a name="htoc11">5.3</a>&nbsp;&nbsp;Búsqueda con Sustitución</h3>
+<!--SEC END -->  El comando para realizar búsqueda con sustitución
+es: <br>
+ <br>
+ <br>
+ <i>dirección</i> <b>s</b>/<i>cadena-búsqueda</i>/<i>cadena-sustitución</i>/[<b>g/c</b>] 
+<ul>
+  <li> dirección indica sobre qué parte del documento se realizan 
+ los cambios. </li>
+  <li><b>g</b> es opcional e indica si el cambio debe tener efecto  una sola
+vez en cada línea o todas las veces (si fuese  el caso) </li>
+  <li><b>c</b> es opcional e indica que se pida confirmación para 
+que el cambio tenga efecto </li>
+</ul>
+  La dirección se indica mediante dos símbolos separados por
+una coma. El primer símbolo indica desde donde empieza a tener efecto
+la sustitución, mientras que el segundo indica hasta donde tiene efecto. 
+<br>
+ <br>
+ <br>
+ Los siguientes símbolos tienen el sentido indicado: <br>
+ <br>
+ 
+<table cellspacing="2" cellpadding="0">
+ <tbody>
+    <tr>
+      <td align="left" nowrap="nowrap"><b>n</b></td>
+ <td align="left" nowrap="nowrap">n es un número que simboliza una
+línea del documento</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>.</b></td>
+ <td align="left" nowrap="nowrap">Lugar actual del documento</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>$</b></td>
+ <td align="left" nowrap="nowrap">La línea final del documento</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>+n</b></td>
+ <td align="left" nowrap="nowrap">n líneas hacia abajo</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>-n</b></td>
+ <td align="left" nowrap="nowrap">n líneas hacia arriba</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>% </b></td>
+ <td align="left" nowrap="nowrap">Todo el documento</td>
+ </tr>
+  </tbody>
+</table>
+<br>
+ <!--TOC section Marcando y Copiando Texto-->  
+<h2><a name="htoc12">6</a>&nbsp;&nbsp;Marcando y Copiando Texto</h2>
+<!--SEC END -->  <!--TOC subsection Marcando en el buffer por defecto-->  
+<h3><a name="htoc13">6.1</a>&nbsp;&nbsp;Marcando en el buffer por defecto</h3>
+<!--SEC END -->  Los siguientes comandos guardan en memoria el fragmento de
+texto indicado: <br>
+ <br>
+ 
+<table cellspacing="2" cellpadding="0">
+ <tbody>
+    <tr>
+      <td align="left" nowrap="nowrap"><b>nyw</b></td>
+ <td align="left" nowrap="nowrap">n palabras comenzando desde la posición
+del cursor</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>nyW</b></td>
+ <td align="left" nowrap="nowrap">n palabras* comenzando desde la posición
+del cursor</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>nyb</b></td>
+ <td align="left" nowrap="nowrap">n palabras desde la posición del
+cursor al principio de la  línea</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>nyB</b></td>
+ <td align="left" nowrap="nowrap">n palabras* desde la posición del
+cursor al principio de la  línea</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap">&nbsp;</td>
+ <td align="left" nowrap="nowrap">&nbsp;</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>y+Retorno</b></td>
+ <td align="left" nowrap="nowrap">La línea actual y la siguiente</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>nyy</b></td>
+ <td align="left" nowrap="nowrap">n líneas desde la actual</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>y0</b></td>
+ <td align="left" nowrap="nowrap">Desde el cursor hasta el principio de la
+línea</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap">&nbsp;</td>
+ <td align="left" nowrap="nowrap">&nbsp;</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>y$</b></td>
+ <td align="left" nowrap="nowrap">Desde el cursor hasta el final de la línea</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>y)</b></td>
+ <td align="left" nowrap="nowrap">Desde el cursor hasta el final de la frase</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>y(</b></td>
+ <td align="left" nowrap="nowrap">Desde el cursor hasta el principio de la
+frase</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>y}</b></td>
+ <td align="left" nowrap="nowrap">Desde el curosr hasta el final de párrafo</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>y{</b></td>
+ <td align="left" nowrap="nowrap">Desde el cursor hasta el principio del
+párrafo</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap">&nbsp;</td>
+ <td align="left" nowrap="nowrap">&nbsp;</td>
+ </tr>
+  </tbody>
+</table>
+<br>
+ <!--TOC subsection Marcando en buffers específicos-->  
+<h3><a name="htoc14">6.2</a>&nbsp;&nbsp;Marcando en buffers específicos</h3>
+<!--SEC END -->  Para marcar texto en uno de los 26 buffers específicos, 
+nombrados de la 'a' a la 'z', se procede del siguiente modo: <br>
+ <br>
+ <br>
+ "<i>letra</i><b>comando</b>  
+<ul>
+  <li> <i>letra</i> es una letra de la a a la z, que identifica el buffer 
+  </li>
+  <li><b>comando</b> es cualquiera de los comandos de borrado, susitución 
+o marcado </li>
+</ul>
+ <!--TOC subsection Copiando la información de los buffers-->  
+<h3><a name="htoc15">6.3</a>&nbsp;&nbsp;Copiando la información de
+los buffers</h3>
+<!--SEC END --> <br>
+ 
+<table cellspacing="2" cellpadding="0">
+ <tbody>
+    <tr>
+      <td align="left" nowrap="nowrap"><b>p</b></td>
+ <td align="left" nowrap="nowrap">Copia el contenido del buffer por defecto
+detrás del cursor</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap"><b>P</b></td>
+ <td align="left" nowrap="nowrap">Copia el contenido del buffer por defecto
+delante del cursor</td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap">"<i>letra</i><b>p</b></td>
+ <td align="left" nowrap="nowrap">Copia el buffer de nombre <i>letra</i></td>
+ </tr>
+ <tr>
+      <td align="left" nowrap="nowrap">"<i>letra</i><b>P</b></td>
+ <td align="left" nowrap="nowrap">Copia el buffer de nombre <i>letra</i></td>
+ </tr>
+  </tbody>
+</table>
+<br>
+ <!--HTMLFOOT--> <!--ENDHTML--> <!--FOOTER--> 
+<hr size="2"> 
+<blockquote><em>This document was translated from L<sup>A</sup>T<sub>E</sub>X
+by </em><a href="http://pauillac.inria.fr/~maranget/hevea/index.html"><em>H<font size="2"><sup>E</sup></font>V<font size="2"><sup>E</sup></font>A</em></a><em>. 
+  </em></blockquote>
+ <br>
+
+
+</body></html>
