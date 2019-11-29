@@ -141,3 +141,70 @@ como lo hacemos desde el promt
 
 somefunction argume argum2 argum3 ....
 #end tema 105
+# TEMA 106
+Gestion de interfa grafica de usurio
+    consta de un servidor X que consta de dotar un espacio al sistema operativo donde cargar un entorno de escritorio ,este se encarga del raton disposicion de teclado profundidad del color bicles de actualizacion del video gestion de la GPU
+    + Servidores X en linux
+        + XFree86
+        + X.org-X11 le tomo la delantera a X free
+        + Accelerated-X
+        + Wayland
+    + Servidror X configuracion
+        XFree86-configure
+        Xorg-configure
+    + Herramientas de configuracion 
+        System-config-display
+        Configuracion de pantallla
+        YaST y YaST"
+Configuracion y ciclos de test
+    + parar el servicio del servidor X
+    + Realizar los cambios de la configuracion
+    + Iniciar el servicio
+    + salir de la sesion grafica y vover entrar
+
+Configuracion de X
+    ***principasles***
+    Mudule,InputDevice,Monitor,Device,Screen,ServerLayout
+    Sintax
+    ```bash
+    Section "Module"
+        Load "modulo1"
+        Load "modulo1"
+    EndSection
+    ```
+    >Indentifier:nombre identificativo
+    >Driver:Controlador que usara el servidor X
+    >Opcion:Ajustes del disposotivo
+    >Protocol:señales que esperan el raton
+    >HorizSync y VertRefresh:Definen la gama de frecuencia de refreso
+    >Modeline:Establece la resolucion
+    >ModelName:Modelo del dispositivo
+    >VendorName y BoardName:informacion sobre la targeta grfica
+    >VideoRam:Ram de que dispone la targeta grafica en KB
+    >DefaultDepth la profundidad de color a nivel de bits 
+_Todos estos paramentros son del fichero de confirguracion del ServerX X.org-X11_
+En la section serverLaout es como una configuracion global
+
+Obtener informacion de visualisacion X
+    xdpyinfo es como un debuger de errores 
+    xwininfo
+
+Tecnologia  y formatos de fuentes
+   Bitmat es una forma mas sencilla de representar las fuentes 
+   Outline
+Configurar el nucleo de las fuentes
+Preparar el directorio de fuentes ".fonts/"
+Añadir las fuentes al path de fuentes de X
+Reiniciar el servidor X o usar xset
+Instalar fuentes 
+/etc/X11/fs/config
+/etc/ini.d/xfs restart
+
+El Sistema de loguin GUI
+XDMCP , puede ser usado :
+    Logins remotos
+    Loguins locales
+    + lo mas comunes
+        LigthDM(el mas popular al día de hoy,ligero,rapido,permite multiples GUIs,configuracion poco compleja),XDM,KDM,GDM,MDMEl fichero de configuracion -> /etc/ligthdm
+Magnificacion de la pantalla -> como crear una mini lupa cuando lo pocisionamos sobre algo
+
