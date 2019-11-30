@@ -123,4 +123,69 @@ alias de correos /etc/mail/alias
 redirecion de correos
     Fordward(~/.forward)
 # Me salte la configuracion de impresora
+# Configuracion basica de red
+En distrubuciones como ubuntu y debia
+iface **interfaz** inet dhcp|static
+    address IPADDDRES<es la ip que quieres ponerle a tu maquina>
+    netmask MASCARA<es la mascara de subred de esa IP>
+    network IPSUBRED<es la ip a la que pertence esa direccion IP>
+    broadcast BROADCASTDIR<ya tu sabes>
+    gateway GATEWAYDIR<y tu sabes>
+
+resolv.conf -> es el fichero de configuracion 
+domain eldominiodelamaquina
+search loslugaresdondebuscar
+nameserver dirdeservidordns
+
+#ifconfig -> es capaz de configurar una interfaz de red
+ifup **interfaz**
+ifdown **interfaz**
+
+tabla de rutas
+route -> es para ver como se resuelve la salida a interne y de nuestro paquetes REVISAR ADSL COURSE
+nos ayuda a resolver de como llegar a un red 
+/etc/hosts -> este fichero prevalece sobre el servidor de dns osea la primera busqueda
+/etc/hostname -> el nobre de la maquina
+/etc/nsswirch.conf -> nos indica cuales son las prioridades de resolucion de redes 
+
+traceroute -n domain -> nos traza la ruta del paquete
+netstat -> nos indica los sockets de linux que estan en uso
+normalmente -> netstat -panut
+tcpdump -> todos los paquetes que van por todas la interfaces
+dig 
+whois domain -> info de un dominio
+lsof -> nos muestra los ficheros que estan que siendo utilizados por los procesos 
+lsof fichero -> nos muestra info del proceso que lo esta buscando
+lsof -i -> que procesos estan exponiendo servicios 
+lsof -p $(pidof proceso<este comando nos devuelve el PID de el proceso indicadp>) -> nos muestra los ficheros utilizados por el proceso
+
+fuser /carpeta -> los procesos utilizando el proceso actual
+
+nmap -p port -sU ip -> busca informacion de red utilizada por esa direccion
+/etc/paswd -> perm 644 
+/etc/shadow -> 000
+/etc/limit.conf -> configuaracion de uso de hadware para diferentes ususrios
+ulimit file -> para las restrinciones de todo el quipo
+
+who -> quienes estan logueados en el sistema
+w -> que comod de donde esta logueando y que esta ejecuando
+last -> un historico de conexxiones remota
+
+# configurando inetd
+configurando del fichero ined.conf(/etc/inetd.conf)
+
+# ssh /etc/ssh/ -> ficheros de configuracion
+authorized_keys -> ficheero de claves 
+# mirar el curso de ssh
+
+gpg -> encriptacion de ficheros
+gpg --key-gen -> generamos las llave
+gpg --ouput **PUB.gpg** --export **indentificador** (sample 243234/ **23e2332**)
+    asi es paraexportar la llave publica
+gpg --import PUB.gpg -> importa mi llave publica tenemos que suponer que estmos en otro server
+
+gpg --encrypt --recipient **idedelallave   filenameaencriptar**
+gpg -d fileencriptado > redireccion -> para desencriptar
+
+#buscar el uso de spc
 
