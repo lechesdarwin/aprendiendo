@@ -93,4 +93,7 @@ def _f(*args,**argsk):
 # es mejor utilizar functools.lru_cahe() que utilizar nuestro propia memoaze
 # el decorador counter sirve bueno paa contar cuantas veces se ejecuto nuestra funcioon:
 
-*** los generadores no son indelebles se4a generqdor[2]***
+**los generadores no son indelebles se4a generqdor[2]**
+
+
+
