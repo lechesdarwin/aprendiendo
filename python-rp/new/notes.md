@@ -68,10 +68,32 @@ a.y
 # enum import enum bueno ya tu sabes lo que hace un enum
 class Color(enum.Enum):
 	red
+    yellow
 	blue
+    black
+    pink
+
 Color.red //0
 Color.blue //1
 # Funcional 
 list compregesion aplican para listas sets tuplas<casoespecial las tuplas conpregension se comportan como un genreador> y diccionarios
 [return ciclo condicion?]
+# los decoradores en python no es mas que una abstraccion de lo que es el patron decorador por lo tanto el retotrno de la funcion de retorno no sera del la funcion decorada si no del decorador
+es de buena practica utilizar functools la funcion wraper para hacer un buen tranajo por que si no lo hacemos asi pordra perder algunas priopiedades de la funcion principal 
+
+# pero si sellama de un metodo de un clase y esta hereda tambien retornar lo que tien que retornar
+```	
+import functools as ft
+def decorator(f):
+	@ft.wraoper(f)
+def _f(*args,**argsk):
+		pass
+	return _f
+``` 
+# es mejor utilizar functools.lru_cahe() que utilizar nuestro propia memoaze
+# el decorador counter sirve bueno paa contar cuantas veces se ejecuto nuestra funcioon:
+
+**los generadores no son indelebles se4a generqdor[2]**
+
+
 
