@@ -1,3 +1,4 @@
+El contexto de build -> es un path donde se ejecuta el command build el deamon de docker toma todo lo que esta en esa carpeta y no puede hacer mas en otra es una forma de seguridad
 Docker aplicaiones de bolsillo
 En una imagen creas toda la configuracion de software libreirias ,etc
 En un contenedor -> lo vuelves realidad
@@ -135,3 +136,92 @@ Varios argumentos en una solacapa
 No instalar paquetes innecesarios
 Labels -> metadatas
 # End Dockerfile
+# Volumenes 
+Nos permite almacenar data persistente del contenedor
+la sintaxis es __utiliza este espacio para que guardes todolosque hagas:en este directorio del contendedor__
+con el Tag del doccker file hasta donde dan mis conociemiento VOLUME path -> crea un volumen anonimo
+con **docker run -v ponaqui:lodeaqui** image 
+creas un contendor mapeado
+facilmente pueden crear contenedores que compartan el volumen 
+en los volumenes tambien existen los huerfanos por eso al hacer un remove de un contendor
+se hace un rm -fv para asegurar
+##Subdiviciones
+### volumenes de host
+son los volumenes que se alamcenan en nuestro docker host o nuestro file system
+
+### End vol host
+### volumenes anonimos 
+    son los que no generamos o agragamos una carpeta si no que docker crea y asigna una de manera random 
+    estos se quedan el la carpeta vlumenes del root de docker
+    cuando no se especifica un volumen este lo crea o atraves de VOlUME path
+### End vol anonimos
+### Name Volumens
+    Son volumenes que nosostros creamos pero que docker los maneja internamente el solito
+    se crean con **docker volumen create name**
+    docker run -v **name**:pathconendeor image
+
+### End vol name volumenes
+
+# End Volumenes
+La red por defecto(bridge) es la docker0(ip a|grep docker)
+docker network ls -> returna todas las redes
+# Redes
+## Crear
+docker network create __name__ //its simple
+docker network create -d **eldrivele controladordelaredpordefectoesbridge** --subnet **subnetadrres** --gateway **yatusabes** **name**
+docker inspect __network__
+docker run --network nameNetwork -> para crear un contenedor con un red distinta al default
+En las redes creadas por nostros se puede hacer un ping o comunicacion por nombres ya que tiene un dns internamente configurado
+Esa comunicaion se logra atravez de contenedores de la misma red
+# conectar diferente redes
+docker connecr network DockerConecameEstared AesteContendor
+# AHcer lo contrario
+docker disconect DesconectaEstared deEsteContendror
+# Aignar una red a un contenedor
+docker run --ip someIp
+## Eliminar
+docker network rm nameNetwork
+_si parece Errors points active es que hay contenedores conectaods_
+## Bridge
+## Host
+Una contenedor creado con la red de host hereda todas las culidades del lamaquina
+## None
+Es un contenedor sin red es decir que se queden aislados
+## Overlay
+## Conectar contenedores
+# End Redes
+# Compose
+Nos ayuda a crear aplicaciones multicontenedores
+Todo esto se define en un archivo de texto debe ser de formato .yml 
+#partes obligatorias
+version:obligatorios
+sevices:obligatoris
+volumes:no es obligatorio
+networks:no es obligatori
+# Example 
+version:"doceker compos eversion va aqui"
+services:
+    cuaquierNombreParaElservicio:
+        container_name: nombre del contenedor
+        ports:
+            "mapinf de puerto"
+        **esto se parece como ir deglosando como lo hariamos desde terminal**
+_docker-compose up -d docker-compose.yml_
+_docker compose down_ esto el servicion y luego lo elimina
+REVISAR LAS POLITICAS DE REINICIO,INCIO STOP EN DOCKER
+como se sabe que se escribe asi?
+https://docs.docker.com/compose
+# instalar
+ir abuscar los pasos a en la pag web de docker
+# end compose
+
+Docker registry -> es un servicio donde podemos subir y bajar imagenes
+¿como creamos un registry  local?
+on directory some/regystry
+docker run -d -p 5000:5000 --name registry -v $PWD/data:/var/lib/registry registry:2
+dokcer tag nameActualdelaimgen:tag localhost:5000/SomeName[:opcionalTag]
+eso se llama tagear
+docker push localhost:5000/namedeLaImageTageada
+para bajarla hacemos un lo mismo pero un pull en vez de push
+compartir nuestro registry cambiando el comando de start del demonio de docker añadidiendo el flag --insecure-regsitry miip:port
+

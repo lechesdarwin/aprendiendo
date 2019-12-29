@@ -94,6 +94,8 @@ def _f(*args,**argsk):
 # el decorador counter sirve bueno paa contar cuantas veces se ejecuto nuestra funcioon:
 
 **los generadores no son indelebles se4a generqdor[2]**
-
-
-
+# metaclases
+son fabricas que permiten crear nuevas clases en tiempo de ejecucion
+type(obj)-> de object type
+type("objectOrname",basedeDoneHeredaEnformaDeTupla,AtributosEnfromadediccionario)//NewObjet=type(object,(object,),dic(name=somesome))
+o=NewObjet()
