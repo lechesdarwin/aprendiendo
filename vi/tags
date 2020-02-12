@@ -1,0 +1,87 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Animal	B11044_Code/B11044_Code/Chapter02/animal.py	/^class Animal(object):$/;"	c
+Animal	B11044_Code/B11044_Code/Chapter04/animal.py	/^class Animal(object):$/;"	c
+Animal	B11044_Code/B11044_Code/Chapter05/animal_farm/animal.py	/^class Animal(object):$/;"	c
+Animal	B11044_Code/B11044_Code/Chapter06/animal.py	/^class Animal(object):$/;"	c
+Cat	B11044_Code/B11044_Code/Chapter02/animals/cat.py	/^class Cat(animal.Animal):$/;"	c
+Cat	B11044_Code/B11044_Code/Chapter04/animals/cat.py	/^class Cat(animal.Animal):$/;"	c
+Cat	B11044_Code/B11044_Code/Chapter05/animal_farm/animals/cat.py	/^class Cat(animal.Animal):$/;"	c
+Cat	B11044_Code/B11044_Code/Chapter06/animals/cat.py	/^class Cat(animal.Animal):$/;"	c
+Dog	B11044_Code/B11044_Code/Chapter02/animals/dog.py	/^class Dog(animal.Animal):$/;"	c
+Dog	B11044_Code/B11044_Code/Chapter04/animals/dog.py	/^class Dog(animal.Animal):$/;"	c
+Dog	B11044_Code/B11044_Code/Chapter05/animal_farm/animals/dog.py	/^class Dog(animal.Animal):$/;"	c
+Dog	B11044_Code/B11044_Code/Chapter06/animals/dog.py	/^class Dog(animal.Animal):$/;"	c
+Farm	B11044_Code/B11044_Code/Chapter02/farm.py	/^class Farm(object):$/;"	c
+Farm	B11044_Code/B11044_Code/Chapter04/farm.py	/^class Farm(object):$/;"	c
+Farm	B11044_Code/B11044_Code/Chapter05/animal_farm/farm.py	/^class Farm(object):$/;"	c
+Farm	B11044_Code/B11044_Code/Chapter06/farm.py	/^class Farm(object):$/;"	c
+Sheep	B11044_Code/B11044_Code/Chapter02/animals/sheep.py	/^class Sheep(animal.Animal):$/;"	c
+Sheep	B11044_Code/B11044_Code/Chapter04/animals/sheep.py	/^class Sheep(animal.Animal):$/;"	c
+Sheep	B11044_Code/B11044_Code/Chapter05/animal_farm/animals/sheep.py	/^class Sheep(animal.Animal):$/;"	c
+Sheep	B11044_Code/B11044_Code/Chapter06/animals/sheep.py	/^class Sheep(animal.Animal):$/;"	c
+__init__	B11044_Code/B11044_Code/Chapter02/animal.py	/^    def __init__(self, kind):$/;"	m	class:Animal
+__init__	B11044_Code/B11044_Code/Chapter02/animals/cat.py	/^    def __init__(self):$/;"	m	class:Cat
+__init__	B11044_Code/B11044_Code/Chapter02/animals/dog.py	/^    def __init__(self):$/;"	m	class:Dog
+__init__	B11044_Code/B11044_Code/Chapter02/animals/sheep.py	/^    def __init__(self):$/;"	m	class:Sheep
+__init__	B11044_Code/B11044_Code/Chapter02/farm.py	/^    def __init__(self):$/;"	m	class:Farm
+__init__	B11044_Code/B11044_Code/Chapter04/animal.py	/^    def __init__(self, kind):$/;"	m	class:Animal
+__init__	B11044_Code/B11044_Code/Chapter04/animals/cat.py	/^    def __init__(self):$/;"	m	class:Cat
+__init__	B11044_Code/B11044_Code/Chapter04/animals/dog.py	/^    def __init__(self):$/;"	m	class:Dog
+__init__	B11044_Code/B11044_Code/Chapter04/animals/sheep.py	/^    def __init__(self):$/;"	m	class:Sheep
+__init__	B11044_Code/B11044_Code/Chapter04/farm.py	/^    def __init__(self):$/;"	m	class:Farm
+__init__	B11044_Code/B11044_Code/Chapter05/animal_farm/animal.py	/^    def __init__(self, kind):$/;"	m	class:Animal
+__init__	B11044_Code/B11044_Code/Chapter05/animal_farm/animals/cat.py	/^    def __init__(self):$/;"	m	class:Cat
+__init__	B11044_Code/B11044_Code/Chapter05/animal_farm/animals/dog.py	/^    def __init__(self):$/;"	m	class:Dog
+__init__	B11044_Code/B11044_Code/Chapter05/animal_farm/animals/sheep.py	/^    def __init__(self):$/;"	m	class:Sheep
+__init__	B11044_Code/B11044_Code/Chapter05/animal_farm/farm.py	/^    def __init__(self):$/;"	m	class:Farm
+__init__	B11044_Code/B11044_Code/Chapter06/animal.py	/^    def __init__(self, kind):$/;"	m	class:Animal
+__init__	B11044_Code/B11044_Code/Chapter06/animals/cat.py	/^    def __init__(self):$/;"	m	class:Cat
+__init__	B11044_Code/B11044_Code/Chapter06/animals/dog.py	/^    def __init__(self):$/;"	m	class:Dog
+__init__	B11044_Code/B11044_Code/Chapter06/animals/sheep.py	/^    def __init__(self):$/;"	m	class:Sheep
+__init__	B11044_Code/B11044_Code/Chapter06/farm.py	/^    def __init__(self):$/;"	m	class:Farm
+act	B11044_Code/B11044_Code/Chapter06/animal.py	/^    def act(self, target, verb):$/;"	m	class:Animal
+act	B11044_Code/B11044_Code/Chapter06/farm.py	/^    def act(self, target):$/;"	m	class:Farm
+add_animal	B11044_Code/B11044_Code/Chapter01/animal_farm.py	/^def add_animal(farm, animal):$/;"	f
+add_animal	B11044_Code/B11044_Code/Chapter02/farm.py	/^    def add_animal(self, animal):$/;"	m	class:Farm
+add_animal	B11044_Code/B11044_Code/Chapter04/farm.py	/^    def add_animal(self, animal):$/;"	m	class:Farm
+add_animal	B11044_Code/B11044_Code/Chapter05/animal_farm/farm.py	/^    def add_animal(self, animal):$/;"	m	class:Farm
+add_animal	B11044_Code/B11044_Code/Chapter06/farm.py	/^    def add_animal(self, animal):$/;"	m	class:Farm
+animal_noises	B11044_Code/B11044_Code/Chapter06/animal_noises.py	/^animal_noises = {$/;"	v
+editorvi-ix1349	index.html	/^básicos de <kbd>vi:<\/kbd>  <a name="editorvi-ix1349"><\/a>$/;"	a
+editorvi-ix1350	index.html	/^<kbd>view<\/kbd> <b>nombre_de_archivo<\/b> <a name="editorvi-ix1350"><\/a>$/;"	a
+editorvi-ix1351	index.html	/^tipo de letra (mayúscula o minúscula) <a name="editorvi-ix1351"><\/a> <a name="editorvi-ix1352"><\/a> <a name="editorvi-ix1353"><\/a> <a name="editorvi-ix1354"><\/a>$/;"	a
+editorvi-ix1355	index.html	/^<p>Salir sin guardar los cambios <a name="editorvi-ix1355"><\/a> <a name="editorvi-ix1356"><\/a>$/;"	a
+g:commenter#comment_str	B11044_Code/B11044_Code/Chapter08/vim-commenter/ftplugin/python.vim	/^let g:commenter#comment_str = '# '$/;"	v
+gc	B11044_Code/B11044_Code/Chapter08/vim-commenter/plugin/commenter.vim	/^nnoremap gc :<c-u>call g:commenter#ToggleComment(v:count1)<cr>$/;"	m
+gc	B11044_Code/B11044_Code/Chapter08/vim-commenter/plugin/commenter.vim	/^vnoremap gc :<c-u>call g:commenter#ToggleComment($/;"	m
+get_kind	B11044_Code/B11044_Code/Chapter04/animal.py	/^    def get_kind(self):$/;"	m	class:Animal
+get_kind	B11044_Code/B11044_Code/Chapter04/animals/cat.py	/^    def get_kind(self):$/;"	m	class:Cat
+get_kind	B11044_Code/B11044_Code/Chapter04/animals/dog.py	/^    def get_kind(self):$/;"	m	class:Dog
+get_kind	B11044_Code/B11044_Code/Chapter04/animals/sheep.py	/^    def get_kind(self):$/;"	m	class:Sheep
+get_kind	B11044_Code/B11044_Code/Chapter05/animal_farm/animal.py	/^    def get_kind(self):$/;"	m	class:Animal
+get_kind	B11044_Code/B11044_Code/Chapter05/animal_farm/animals/cat.py	/^    def get_kind(self):$/;"	m	class:Cat
+get_kind	B11044_Code/B11044_Code/Chapter05/animal_farm/animals/dog.py	/^    def get_kind(self):$/;"	m	class:Dog
+get_kind	B11044_Code/B11044_Code/Chapter05/animal_farm/animals/sheep.py	/^    def get_kind(self):$/;"	m	class:Sheep
+get_kind	B11044_Code/B11044_Code/Chapter06/animal.py	/^    def get_kind(self):$/;"	m	class:Animal
+get_kind	B11044_Code/B11044_Code/Chapter06/animals/cat.py	/^    def get_kind(self):$/;"	m	class:Cat
+get_kind	B11044_Code/B11044_Code/Chapter06/animals/dog.py	/^    def get_kind(self):$/;"	m	class:Dog
+get_kind	B11044_Code/B11044_Code/Chapter06/animals/sheep.py	/^    def get_kind(self):$/;"	m	class:Sheep
+main	B11044_Code/B11044_Code/Chapter01/animal_farm.py	/^def main(animals):$/;"	f
+main	B11044_Code/B11044_Code/Chapter02/animal_farm.py	/^def main(animals):$/;"	f
+main	B11044_Code/B11044_Code/Chapter04/animal_farm.py	/^def main(animals):$/;"	f
+main	B11044_Code/B11044_Code/Chapter05/animal_farm/animal_farm.py	/^def main(animals):$/;"	f
+main	B11044_Code/B11044_Code/Chapter06/animal_farm.py	/^def main(animals):$/;"	f
+make_animal	B11044_Code/B11044_Code/Chapter02/animal_farm.py	/^def make_animal(kind):$/;"	f
+make_animal	B11044_Code/B11044_Code/Chapter04/animal_farm.py	/^def make_animal(kind):$/;"	f
+make_animal	B11044_Code/B11044_Code/Chapter05/animal_farm/animal_farm.py	/^def make_animal(kind):$/;"	f
+make_animal	B11044_Code/B11044_Code/Chapter06/animal_farm.py	/^def make_animal(kind):$/;"	f
+print_contents	B11044_Code/B11044_Code/Chapter02/farm.py	/^    def print_contents(self):$/;"	m	class:Farm
+print_contents	B11044_Code/B11044_Code/Chapter04/farm.py	/^    def print_contents(self):$/;"	m	class:Farm
+print_contents	B11044_Code/B11044_Code/Chapter05/animal_farm/farm.py	/^    def print_contents(self):$/;"	m	class:Farm
+print_contents	B11044_Code/B11044_Code/Chapter06/farm.py	/^    def print_contents(self):$/;"	m	class:Farm
+x-5lha8	index.html	/^<a name="x-5lha8"><\/a>Tabla 6-1  Comandos básicos de <kbd>vi<\/kbd><table width="100%" cellpadding="10" cellspacing="0" border="2">$/;"	a

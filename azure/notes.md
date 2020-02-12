@@ -1,0 +1,1 @@
+71 del libro
