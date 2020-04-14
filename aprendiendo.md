@@ -35,7 +35,7 @@ python
 codifos de bloques function igual de esta manera
 ```
 
-***
+
 otras manera de crear reglas horizntales
 ---
 
@@ -49,12 +49,12 @@ paro los enlaces?
 >crear una varible. y enlacas a tu wweb 
 
 escribir lineas de codigo
-` 'python'
+``` 'python'
 function a()
 {
  //code
 }
-`
+```
 para colocar imagenes es lo mismo que los enlaces solo con la diferencia de el !
 ![texto alternativo](https://www.google.com/search?q=imagenes+de+perros&safe=active&sxsrf=ACYBGNTMPyaRIH0Hou5x0yYc_peiAzyyFg:1569717469376&tbm=isch&source=iu&ictx=1&fir=beylIlIW9UBumM%253A%252CLy2oMEccuaB4oM%252C_&vet=1&usg=AI4_-kR89ETnGZj11EfKX17wcef9UZuImQ&sa=X&ved=2ahUKEwjArqOh5fTkAhUCDq0KHScZCzkQ9QEwAHoECAcQBA#imgrc=beylIlIW9UBumM:)
 
