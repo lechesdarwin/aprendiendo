@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Notas del libro Mastering postgres sql</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="github-pandoc.css" />
+</head>
+<body>
+<p>#atomicidad -&gt; es la propiedad que asegura si una operacion se ha realizado o no</p>
+<p>#consitencia -&gt; asegura que los datos sean modificados a los indicados y no ocurran daños parall</p>
+<h1 id="u-sistemas-nosql-no-puede-puede-cumplir-el-teorema-cap">u sistemas NoSql no puede puede cumplir el teorema Cap</h1>
+<p>consistencia todos lo clientes accden a los mismo datos actualizados de la base de datos availible es disponible auque ocurran fallos de para esos estan las replidcas partition tolerance</p>
+<h1 id="acid">Acid</h1>
+<p>Un opercion simple logica en una base de datos se llama transaccion veose la transaccion como un conjunto de pasos logicos (CRUD)</p>
+<ul>
+<li><p>Atomicidad significa todo o nada es decir si una parte de la transsaccion falla todo falla</p></li>
+<li><p>Consitencia es pasr de un estado otro estado nuevo afectando solamente al elemento elegido o no repercutiendo en otras filas o datos</p></li>
+<li><p>Isolation(islameiento) es to garantiza que ocurrar u race condition en los datos</p></li>
+<li><p>Durabilidad esto garantizaq ue una vez se realize una transsaccion garantizar que el dato este aho aunque ourra un corte de energia potgre tien un sistema llamado WAL</p></li>
+</ul>
+<h1 id="sql">Sql</h1>
+<p>consta de varias partes</p>
+<p>DDL define y modifica la strucutur relacional de la base de datos DML recupera y extre los datos DCl controla los derechos de accesos de las relaciones</p>
+<blockquote>
+<p>los terminos relacion,tuple,atributo and unknown es un lenguaje de humano tabla fila columna and NULL Los dominios no son nada mas y nada menos que el nombre y tipo de atributo(columna)</p>
+</blockquote>
+<h2 id="normalizacion">Normalizacion</h2>
+<p>la normalizacion es el modelado de bases de datos relacionales ,es decir, el procesos de organziacion de columnas y relaciones evitando la redundacia de datos,la regla formal es aplicar la normalizacion a menos que haiga una buena razon para no hacerlo</p>
+<h1 id="tupla">Tupla</h1>
+<p>Es cun conjunto de datos ordenados que se escriben entre() y estan separados por coma ejemplo (Jhon,Hail,1970) (a1,a2,a3,a4)=(b1,b2,b3,b4) si y solo si (a1=b1)(a2=b2)… En una tupla el orden importa tambien que los elementos no esten repetidos y son datos finitos , tambien una tupla no es un conjunto</p>
+<h1 id="el-valor-null">El valor null</h1>
+<p>Las base de datos relaacionales utilizan 3 valores logico <strong>tree-value logic 3VL</strong> verdadero , falso y NULL el terce valor puede ser conocido como iinexistente , vacia , desconocido o que llenara despues, es por eso que no puede haber dos valores nulos</p>
+<h1 id="constraint-restrinciones">constraint (restrinciones)</h1>
+<p>Permie el contrl de la data, la redudancia la integridad</p>
+<h1 id="domain-integretid-constraint">domain integretid constraint</h1>
+<p>La integridad del dominio se asegura que los datos de entrada son y solo son del tipo especificado(int,real,text,inet)</p>
+<h1 id="identity-integridad-constraint">Identity integridad constraint</h1>
+<p>esto se refiere que un atributo debe tener un clave primaria que no se repitaa y sea nulo</p>
+<h1 id="las-claves-foraneas-kf">Las claves foraneas KF</h1>
+<p>Una FK es un atributo o conjunto de atrinutos que que pueden indentifar unas tuplas en relacion refernciada Son como tuplas de referencia a otras tuplas estas claves foraneas pueden ser a difrencias de las claves primarias , pueden terner el valor nulo y pueden refernciar 1 sola tupla Por ejemplo un padre que puede tener muchos hijos esto es una relacion 1 a muchos Cuando ocurre un actualizaion o eliminacion en un FK pueden suceder cosas como:</p>
+<p>Cascade: cuando se actualiza o elimina una tupla en la relacion referenciada las tuplas en relacion de referencia tambien se eliminan o actualizan Restrict : la tupla no se puede eliminar o actualizar si esta referenciada por otra relacion Set default : cuando se elimina o cambia un atributo referenciado la clave externa se le pasa el valor po defecto Set null : la clave externa se coloca en null si se elimina un atributo referenciado</p>
+<h1 id="algebra-relacional">algebra relacional</h1>
+<h2 id="instalcion">Instalcion</h2>
+<p>postgresql soporta variaas plataformas cada plataoforma o OS tiene un binario listo para la</p>
+<p>instalacion , la desventaja de esto es que no estan actualizados pero si vamos a la pagina de</p>
+<p>postgresql podemos encontrar la manera de encontra un binario actualizado</p>
+<pre><code>https://www.postgresql.org/download/linux/</code></pre>
+<p>Create the file /etc/apt/sources.list.d/pgdg.list and add a line for the repository</p>
+<pre><code>deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main
+
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+sudo apt-get update</code></pre>
+<p>or si el sistema como es ununtu simplemente has</p>
+<pre><code>sudo apt-get install postgresql-server-11</code></pre>
+<h2 id="por-codigo-fuente">por codigo fuente</h2>
+<p>sudo apt-get install build-essential sudo apt-get install zlib1g-dev libreadline6-dev en centos sudo yum groupinstall ‘Development Tools’ You can get the source code of PostgreSQL from the PostgreSQL server FTP site and extract it as follows:</p>
+<pre><code>wget https://ftp.postgresql.org/pub/source/v11.1/postgresql-11.1.tar.bz2
+tar -xvf postgresql-11.1.tar.bz2</code></pre>
+<p>luego de hacer el</p>
+<pre><code>./configure
+make
+sudo make install</code></pre>
+<p>El binaria se encuentra en /usr/local/pgsql</p>
+<p>El servidor posgre no se ejecuta si no tiene el usuario postgres adduser postgres</p>
+<p>Ahora necesita crear una carpeta donde alamacenara los datos del cluster de base de datos y cambiar el propietario a postgres inicializar el comando initdb -D elpathdelacarpetadealmacenamiento No olvidar que lo debe ejecutar siendo usuario postgres</p>
+<p>El cliente de terminal es pqsql</p>
+<h2 id="si-instala-desde-la-paqueteria-oficial-de-tu-sistema-recomendado">si instala desde la paqueteria oficial de tu sistema (recomendado)</h2>
+<p>Instalndo el cliente sudo apt-get install postgresql-client-11 esto termina en /usr/lib/postgresql</p>
+<p>Instalacion del serividor sudo apt-get install postgresql-11 Un cluster de base de datos es una colecciones de bases de datos administrado por una sola instacia Este cluster se puede crear en difrentes carpetas es decir que podemos tener muchos cluster en una sola maquina para inicializar un cluster es con initdb Esto inicia el server de postgress /usr/lib/postgresql/11/bin/pg_ctl -D /var/lib/postgresql/11/main -l logfile start Y es asi como se inicializa un cluster el argi puede carbiar la ruta pero el propietaria debe ser postgress</p>
+<p>pgrep -a postgress -&gt; para listar los procesos que ha creado</p>
+<h1 id="postgres-clients">postgres clients</h1>
+<p>ya tu sabes</p>
+<p>podemos indicar un archivo externo desde el cli con -f o desde el client path las variables</p>
+<p>ON_ERROR_STOP este es false por defecto pero es recomendamble ponerlo en true ya tu sabes ON_ERROR_ROLLBACK este es true por defecto y revierte las operaciones transaccionales AUTO_COMMIT esto es false y es mejor tenerlo desactivado para evitar errores humano</p>
+<h2 id="atajos">atajos</h2>
+<p>postgres=# activity ‘SELECT pid, query, backend_type, state FROM pg_stat_activity’; postgres=# :activity; reindexdb este es bueno para reindexar indecis dañados por diferentes motivos, raramente se usa clusterdb este se usa para agrupar relaciones(tablas,vistas,etc) en una sola para aumentar el rendimiento cuidado que este</p>
+<pre><code>es una  operacion de bloqueo</code></pre>
+<p>backup fisica este se encarga de agrupar todas las bases de datos en uno solo ,esta copia solo sera compatible con otra</p>
+<pre><code>pg_basebackup es una herramienta para lograr esto
+base instancia de la misma version que la genero</code></pre>
+<p>backup logic este hace un volcado de los datos a sentencias SQL(menos la de create database) pg_dump este comando ayuda a hacer un volcado logico a un determinado db pg_dumpall este hace un volcado a todas las bases de datos el volcado logico es jodidamente lento # Database naming conventios para las bases de datos ,tablas usamos nombre singulares ya que estos representan un entidad en el mundo real(objeto, persona) para los nombre compuestos usamos guion bajo para las columnas tambien nombres singulares</p>
+<p>las claves primarias nametable_identificado las claves foraneas debe tener el mismo nombre de la clave primaria</p>
+<p>referenciada Postgresql no tiene o el mala paractica usar camelcase La logitud de los nombres de objetos tiene un maximo de 63 caracteres ## comentarios</p>
+<p>de una sola linea - multilinea /**/</p>
+<p>postgre permite guardar la documentacion de un objeto en COMMENT ON</p>
+<h1 id="jerarquia-de-postgresql">jerarquia de PostgreSQL</h1>
+<p>template database databases Roles TableSpace Settings</p>
+<p>Templete procedural languajes</p>
+<h2 id="template-database">template database</h2>
+<p>Vea las plantillas como el esqueleto de una base de datos o el namespace en los lenguajes de programacion Por defecto al crear una base de datos(si no se especifica una plantilla) postgre utiliza la plantilla template1, por ejemplo si desea que las proximas bases de datos tengan la misma extencion podria modificar template1 para lograr eso si embargo esto ya no aplicara para las otras bases de datos ya creadas el template0 es como una copia de seguridad porsi</p>
+<p>todo flla si no encuentra el templete1</p>
+<h2 id="database-user">database user</h2>
+<p>En postgresql puedes accder a otras base de datos atrvez de la base de datos o es5o se llama conexion de bases de datos</p>
+<p>cruzado se remienda usar foreign data wrapper nostros podemos visualiar los permisos de un usurio sus previligios ccomo la siguiente sintaxis <user>=<privileges>/concedido por</p>
+<p>con el eetacomando podemos listar las bases de datos en el cluster</p>
+<p>Privilegios CREATE(-C) PERMITE A USSUARIO CREAR ESQUEMAS DENTRO DE la base dea datos CONNECT(-C) conect les da acceso a labase de datos TEMPORARY(-T) permite al usuario crear tablas temporales estas tablas se destryen al finalizar la sesin de usuario</p>
+<p>datafrozenxind utilizada para autovacum oerations datatablespace para especifiar el espaciodetabla datconnlimit para especificar el numero de conxiones concurretes si esta en -1 sifnifica que no hay limites datallowconn desactivar la conexiones a la db principalmente para proteger templete0</p>
+El metacaracter
+</body>
+</html>
